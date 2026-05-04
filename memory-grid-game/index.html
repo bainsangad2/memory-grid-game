@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Grid Game</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Splash Screen -->
+    <div id="splash-screen">
+        <canvas id="splash-canvas"></canvas>
+        <button id="start-btn">Start Game</button>
+    </div>
+
+    <!-- Main Game Screen -->
+    <div id="game-screen" style="display: none;">
+
+        <!-- Top Bar -->
+        <div id="top-bar">
+            <div id="score">Score: 0</div>
+            <button id="help-btn">Help</button>
+        </div>
+
+        <!-- Help Section -->
+        <div id="help-section" style="display: none;">
+            <p>
+                Watch the pattern of highlighted tiles, then repeat it in the same order.
+                Each round adds one more tile. Try to go as far as you can!
+            </p>
+        </div>
+
+        <!-- Game Grid -->
+        <div id="grid">
+            <div class="tile" data-id="0"></div>
+            <div class="tile" data-id="1"></div>
+            <div class="tile" data-id="2"></div>
+            <div class="tile" data-id="3"></div>
+            <div class="tile" data-id="4"></div>
+            <div class="tile" data-id="5"></div>
+            <div class="tile" data-id="6"></div>
+            <div class="tile" data-id="7"></div>
+            <div class="tile" data-id="8"></div>
+        </div>
+
+        <!-- Status -->
+        <div id="status-message"></div>
+
+        <!-- Buttons Container (NEW) -->
+        <div id="button-group">
+            <button id="restart-btn">Play Again</button>
+            <button id="menu-btn">Main Menu</button>
+        </div>
+
+        <!-- High Score Display -->
+        <div id="high-score"></div>
+
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
