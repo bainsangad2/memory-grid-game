@@ -1,0 +1,210 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    background-color: black;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Splash Screen */
+#splash-screen {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* FULL SCREEN CANVAS */
+#splash-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    border: none;
+}
+
+/* Centered button */
+#start-btn {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    padding: 14px 24px;
+    font-size: 18px;
+
+    background-color: #28a745;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+
+    z-index: 2;
+}
+
+#start-btn:hover {
+    background-color: #218838;
+}
+
+/* Game Screen */
+#game-screen {
+    padding: 20px;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Top Bar */
+#top-bar {
+    width: 100%;
+    max-width: 320px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+/* Help Section */
+#help-section {
+    background-color: #63bef3;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    max-width: 320px;
+    display: none;
+}
+
+/* Help button */
+#help-btn {
+    padding: 8px 14px;
+    font-size: 14px;
+
+    background: linear-gradient(135deg, #4facfe, #00c6ff);
+    color: white;
+
+    border: none;
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#help-btn:hover {
+    transform: translateY(-2px);
+}
+
+#help-btn:active {
+    transform: scale(0.95);
+}
+
+/* Grid */
+#grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+
+    max-width: 320px;
+    width: 100%;
+    margin: 60px auto 20px auto;
+}
+
+/* Tiles */
+.tile {
+    width: 100%;
+    padding-top: 100%;
+    background-color: #444;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.tile.active {
+    background-color: #f1c40f;
+}
+
+.tile:active {
+    transform: scale(0.95);
+}
+
+/* Status */
+#status-message {
+    margin: 20px 0;
+    font-size: 16px;
+}
+
+/* Buttons */
+#button-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+#restart-btn {
+    padding: 10px 18px;
+    font-size: 16px;
+    background-color: #dc3545;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#menu-btn {
+    padding: 10px 18px;
+    font-size: 16px;
+    background-color: #6c757d;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#high-score {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+/* Start button animation */
+#start-btn {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Gentle floating pulse */
+@keyframes floatPulse {
+    0% {
+        transform: translateX(-50%) translateY(0);
+        box-shadow: 0 0 10px rgba(0, 198, 255, 0.3);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-6px);
+        box-shadow: 0 0 20px rgba(0, 198, 255, 0.6);
+    }
+    100% {
+        transform: translateX(-50%) translateY(0);
+        box-shadow: 0 0 10px rgba(0, 198, 255, 0.3);
+    }
+}
+
+/* Apply animation */
+#start-btn {
+    animation: floatPulse 2s infinite ease-in-out;
+}
+
+/* Hover boost */
+#start-btn:hover {
+    transform: translateX(-50%) scale(1.1);
+}
